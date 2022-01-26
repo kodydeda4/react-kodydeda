@@ -20,6 +20,7 @@ import {
   Tag,
   HStack,
 } from "@chakra-ui/react";
+import ToolCard from "../components/experience-card";
 
 export default function IndexView() {
   return (
@@ -33,7 +34,6 @@ export default function IndexView() {
           alignItems={"flex-start"}
         >
           <HeaderView />
-
           <AboutView />
           <ExperienceView />
         </VStack>
@@ -82,22 +82,29 @@ const ExperienceView = () => {
     experiences: [
       {
         name: "Dealerware",
+        description: "Description",
+        link: "https://www.google.com"
       },
     ],
   };
 
   return (
-    <VStack spacing={3} alignItems="flex-start">
+    <VStack width="full" spacing={3} alignItems={"flex-start"}>
       <Heading size="lg">Experience</Heading>
       <Divider />
 
       {props.experiences.map((experience) => (
-        <HStack>
-          <Box>
-
-          </Box>
-          <Text>{experience.name}</Text>
-        </HStack>
+        <ToolCard
+        
+          // key={experience.id}
+          name={experience.name}
+          description={experience.description}
+          image={experience.Image}
+          // platform={tool.fields.Platform}
+          // isAffiliate={tool.fields.Affiliate}
+          link={experience.link}
+        />
+        // ))}
       ))}
     </VStack>
   );
