@@ -1,13 +1,8 @@
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Flex,
-  HStack,
-  IconButton, useColorMode
-} from "@chakra-ui/react";
+import { Box, Flex, HStack, IconButton, useColorMode } from "@chakra-ui/react";
 import { FaGithub, FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
 
-export default function Navbar() {
+export default function NavbarView() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
