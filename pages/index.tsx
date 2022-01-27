@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Box,
   Button,
   Center,
   Container,
@@ -17,6 +18,7 @@ import {
 import ExperienceCard from "../components/experience-card";
 import ProjectCard from "../components/project-card";
 import EducationCard from "../components/education-card";
+// import HeaderCard from "../components/header-card";
 
 const resume = {
   name: "Kody Deda",
@@ -140,10 +142,8 @@ const resume = {
 
 export default function Index() {
   return (
-    <Container maxWidth="container.xl" padding={0}>
-      <Flex width={"50vh"} direction={{ base: "column", md: "row" }}>
-    <ResumeView/>
-      </Flex>
+    <Container width="full" padding={0}>
+      <ResumeView />
     </Container>
   );
 }
@@ -159,9 +159,6 @@ const ResumeView = () => {
       spacing={10}
       alignItems={"flex-start"}
     >
-      <Button size="lg" width="full" onClick={() => toggleColorMode()}>
-        Toggle Dark Mode
-      </Button>
       <HeaderView
         props={{
           name: resume.name,
@@ -169,12 +166,17 @@ const ResumeView = () => {
           avatar: resume.avatar,
         }}
       />
+
       <AboutView
         props={{
           description: resume.description,
           skills: resume.skills,
         }}
       />
+
+      <Button colorScheme={"blue"} size="lg" width="full" onClick={() => toggleColorMode()}>
+        Toggle Dark Mode
+      </Button>
       <ExperienceView props={{ experience: resume.experience }} />
       <ProjectsView props={{ projects: resume.projects }} />
       <EducationView props={{ education: resume.education }} />
@@ -184,23 +186,26 @@ const ResumeView = () => {
 
 const HeaderView = ({ props: { name, title, avatar } }) => {
   return (
-    <VStack spacing={3} alignItems="flex-start">
-      <Center>
+    <Box w={"full"} textAlign={"center"}>
       <Avatar
         size={"3xl"}
         src={avatar}
-        borderWidth="1px"
-        borderColor={useColorModeValue("neutral.100", "neutralD.100")}
         alt={"Avatar Alt"}
         mb={4}
         pos={"relative"}
+        borderWidth="1px"
+        borderColor={useColorModeValue("neutral.100", "neutralD.100")}
       />
-      </Center>
-      <Heading size="xl">{name}</Heading>
-      <Text fontWeight={600} color={"gray.500"} mb={4}>
+      <Heading fontSize={"3xl"}>{name}</Heading>
+      <Text
+        width={"full"}
+        textAlign={"center"}
+        fontWeight={600}
+        color={"gray.500"}
+      >
         {title}
       </Text>
-    </VStack>
+    </Box>
   );
 };
 
