@@ -1,24 +1,20 @@
 import {
   Avatar,
   Box,
-  Button,
-  Center,
-  Container,
-  Divider,
-  Flex,
-  Heading,
+  Button, Container,
+  Divider, Heading,
   HStack,
   Tag,
   Text,
   useBreakpointValue,
   useColorMode,
   useColorModeValue,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
-import ExperienceCard from "../components/experience-card";
-import ProjectCard from "../components/project-card";
 import EducationCard from "../components/education-card";
-// import HeaderCard from "../components/header-card";
+import ExperienceCard from "../components/experience-card";
+import Navbar from "../components/navbar";
+import ProjectCard from "../components/project-card";
 
 const resume = {
   name: "Kody Deda",
@@ -26,7 +22,7 @@ const resume = {
   avatar:
     "https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
   description:
-    "👋 Hi, I'm a professional software engineer who specializes in developing software for the Apple ecosystem. I love UI/UX design & functional programming!",
+    "👋 Hey, I'm Kody. I'm a software engineer who specializes in developing software for the Apple ecosystem. I love functional programming and building UI.",
   skills: [
     "SwiftUI",
     "Combine",
@@ -142,15 +138,14 @@ const resume = {
 
 export default function Index() {
   return (
-    <Container width="full" padding={0}>
-      <ResumeView />
+    <Container maxWidth="600" padding={0}>
+      <Navbar />
+      <ResumeView />    
     </Container>
   );
 }
 
 const ResumeView = () => {
-  const { toggleColorMode } = useColorMode();
-
   return (
     <VStack
       width="full"
@@ -174,8 +169,8 @@ const ResumeView = () => {
         }}
       />
 
-      <Button colorScheme={"blue"} size="lg" width="full" onClick={() => toggleColorMode()}>
-        Toggle Dark Mode
+      <Button colorScheme={"blue"} size="lg" width="full">
+        Contact Me
       </Button>
       <ExperienceView props={{ experience: resume.experience }} />
       <ProjectsView props={{ projects: resume.projects }} />
