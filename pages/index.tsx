@@ -1,5 +1,7 @@
 import {
+  Avatar,
   Button,
+  Center,
   Container,
   Divider,
   Flex,
@@ -9,6 +11,7 @@ import {
   Text,
   useBreakpointValue,
   useColorMode,
+  useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
 import ExperienceCard from "../components/experience-card";
@@ -18,6 +21,8 @@ import EducationCard from "../components/education-card";
 const resume = {
   name: "Kody Deda",
   title: "iOS Developer",
+  avatar:
+    "https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
   description:
     "👋 Hi, I'm a professional software engineer who specializes in developing software for the Apple ecosystem. I love UI/UX design & functional programming!",
   skills: [
@@ -121,60 +126,80 @@ const resume = {
       institution: "University of North Carolina Wilmnington",
       timeline: "Spring 2019 - Fall 2021",
       icon: "https://cdn-icons-png.flaticon.com/512/6556/6556054.png",
-      link: "https://uncw.edu"
+      link: "https://uncw.edu",
     },
     {
       degree: "Associate's of Science",
       institution: "Cape Fear Community College",
       timeline: "Spring 2016 - Fall 2018",
       icon: "https://cdn-icons-png.flaticon.com/512/6556/6556248.png",
-      link: "https://cfcc.edu"
+      link: "https://cfcc.edu",
     },
   ],
 };
 
 export default function Index() {
-  const { toggleColorMode } = useColorMode();
-
   return (
     <Container maxWidth="container.xl" padding={0}>
       <Flex width={"50vh"} direction={{ base: "column", md: "row" }}>
-        <VStack
-          width="full"
-          height="full"
-          padding={10}
-          spacing={10}
-          alignItems={"flex-start"}
-        >
-          <Button size="lg" width="full" onClick={() => toggleColorMode()}>
-            Toggle Dark Mode
-          </Button>
-          <HeaderView
-            props={{
-              name: resume.name,
-              title: resume.title,
-            }}
-          />
-          <AboutView
-            props={{
-              description: resume.description,
-              skills: resume.skills,
-            }}
-          />
-          <ExperienceView props={{ experience: resume.experience }} />
-          <ProjectsView props={{ projects: resume.projects }} />
-          <EducationView props={{ education: resume.education }} />
-        </VStack>
+    <ResumeView/>
       </Flex>
     </Container>
   );
 }
 
-const HeaderView = ({ props: { name, title } }) => {
+const ResumeView = () => {
+  const { toggleColorMode } = useColorMode();
+
+  return (
+    <VStack
+      width="full"
+      height="full"
+      padding={10}
+      spacing={10}
+      alignItems={"flex-start"}
+    >
+      <Button size="lg" width="full" onClick={() => toggleColorMode()}>
+        Toggle Dark Mode
+      </Button>
+      <HeaderView
+        props={{
+          name: resume.name,
+          title: resume.title,
+          avatar: resume.avatar,
+        }}
+      />
+      <AboutView
+        props={{
+          description: resume.description,
+          skills: resume.skills,
+        }}
+      />
+      <ExperienceView props={{ experience: resume.experience }} />
+      <ProjectsView props={{ projects: resume.projects }} />
+      <EducationView props={{ education: resume.education }} />
+    </VStack>
+  );
+};
+
+const HeaderView = ({ props: { name, title, avatar } }) => {
   return (
     <VStack spacing={3} alignItems="flex-start">
+      <Center>
+      <Avatar
+        size={"3xl"}
+        src={avatar}
+        borderWidth="1px"
+        borderColor={useColorModeValue("neutral.100", "neutralD.100")}
+        alt={"Avatar Alt"}
+        mb={4}
+        pos={"relative"}
+      />
+      </Center>
       <Heading size="xl">{name}</Heading>
-      <Text>{title}</Text>
+      <Text fontWeight={600} color={"gray.500"} mb={4}>
+        {title}
+      </Text>
     </VStack>
   );
 };
