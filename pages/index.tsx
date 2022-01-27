@@ -24,7 +24,7 @@ const resume = {
     "SwiftUI",
     "Combine",
     // "Composable Architecture",
-    // "MVVM-CleanArchitecture",    
+    // "MVVM-CleanArchitecture",
     "Firebase",
     "Stripe",
     // "Typescript",
@@ -47,14 +47,14 @@ const resume = {
         "SwiftUI app that connects to Firebase authentication and Cloud Firestore. Features Apple, Email, and Anonymous sign-in.",
       tags: ["SwiftUI"],
       icon: "https://cdn-icons-png.flaticon.com/512/6556/6556054.png",
-      link: "https://www.dealerware.com",
+      link: "https://github.com/kodydeda4/SwiftUI-Firetodos",
     },
     {
       title: "React-FireTodos",
       description: "React-based counterpart with Stripe integration",
       tags: ["ReactJS"],
       icon: "https://cdn-icons-png.flaticon.com/512/6556/6556061.png",
-      link: "https://www.dealerware.com",
+      link: "https://github.com/kodydeda4/react-firetodos",
     },
     {
       title: "Sapphire",
@@ -62,7 +62,7 @@ const resume = {
         "SwiftUI app that allows you to customize your app-icons and make them look more like iOS.",
       tags: ["SwiftUI"],
       icon: "https://cdn-icons-png.flaticon.com/512/6556/6556077.png",
-      link: "https://www.dealerware.com",
+      link: "https://github.com/kodydeda4/SwiftUI-Sapphire",
     },
     {
       title: "Emerald",
@@ -70,49 +70,49 @@ const resume = {
         "SwiftUI app that allows you to set keyboard shortcuts for things like focusing, resizing, and rebalancing your windows.",
       tags: ["SwiftUI"],
       icon: "https://cdn-icons-png.flaticon.com/512/6556/6556077.png",
-      link: "https://www.dealerware.com",
+      link: "https://github.com/kodydeda4/SwiftUI-Emerald",
     },
     {
       title: "GuitarTuner",
       description: "Description",
       tags: ["SwiftUI"],
       icon: "https://cdn-icons-png.flaticon.com/512/6556/6556077.png",
-      link: "https://www.dealerware.com",
+      link: "https://github.com/kodydeda4/SwiftUI-GuitarTuner",
     },
     {
       title: "MusicToy",
       description: "Description",
       tags: ["SwiftUI"],
       icon: "https://cdn-icons-png.flaticon.com/512/6556/6556077.png",
-      link: "https://www.dealerware.com",
+      link: "https://github.com/kodydeda4/SwiftUI-MusicToy",
     },
     {
       title: "Cookable",
       description: "Description",
       tags: ["SwiftUI"],
       icon: "https://cdn-icons-png.flaticon.com/512/6556/6556077.png",
-      link: "https://www.dealerware.com",
+      link: "https://github.com/kodydeda4/SwiftUI-Cookable",
     },
     {
       title: "MyersBriggs",
       description: "Description",
       tags: ["SwiftUI"],
       icon: "https://cdn-icons-png.flaticon.com/512/6556/6556077.png",
-      link: "https://www.dealerware.com",
+      link: "https://github.com/kodydeda4/SwiftUI-MyersBriggs",
     },
     {
       title: "DemonQuest",
       description: "Description",
       tags: ["Unity", "C#"],
       icon: "https://cdn-icons-png.flaticon.com/512/6556/6556077.png",
-      link: "https://www.dealerware.com",
+      link: "https://github.com/kodydeda4/Unity3D-DemonQuestRPG",
     },
     {
       title: "OpenCV",
       description: "Description",
       tags: ["OpenCV", "Python"],
       icon: "https://cdn-icons-png.flaticon.com/512/6556/6556077.png",
-      link: "https://www.dealerware.com",
+      link: "https://github.com/kodydeda4/Python-OpenCV",
     },
   ],
   education: [
@@ -121,17 +121,21 @@ const resume = {
       institution: "University of North Carolina Wilmnington",
       timeline: "Spring 2019 - Fall 2021",
       icon: "https://cdn-icons-png.flaticon.com/512/6556/6556054.png",
+      link: "https://uncw.edu"
     },
     {
       degree: "Associate's of Science",
       institution: "Cape Fear Community College",
       timeline: "Spring 2016 - Fall 2018",
       icon: "https://cdn-icons-png.flaticon.com/512/6556/6556248.png",
+      link: "https://cfcc.edu"
     },
   ],
 };
 
-export default function IndexView() {
+export default function Index() {
+  const { toggleColorMode } = useColorMode();
+
   return (
     <Container maxWidth="container.xl" padding={0}>
       <Flex width={"50vh"} direction={{ base: "column", md: "row" }}>
@@ -142,6 +146,9 @@ export default function IndexView() {
           spacing={10}
           alignItems={"flex-start"}
         >
+          <Button size="lg" width="full" onClick={() => toggleColorMode()}>
+            Toggle Dark Mode
+          </Button>
           <HeaderView
             props={{
               name: resume.name,
@@ -164,15 +171,10 @@ export default function IndexView() {
 }
 
 const HeaderView = ({ props: { name, title } }) => {
-  const { toggleColorMode } = useColorMode();
-
   return (
     <VStack spacing={3} alignItems="flex-start">
       <Heading size="xl">{name}</Heading>
       <Text>{title}</Text>
-      <Button size="lg" width="full" onClick={() => toggleColorMode()}>
-        Toggle Dark Mode
-      </Button>
     </VStack>
   );
 };
