@@ -13,8 +13,8 @@ const resume = {
     "Firebase",
     "Stripe",
     // "Typescript",
-    "ReactJS",
-    // "Functional Programming",
+    // "ReactJS",
+    "Functional Programming",
   ],
   experience: [
     {
