@@ -3,12 +3,8 @@ import {
   Box,
   Flex,
   HStack,
-  IconButton,
-  Link,
-  useColorMode,
-  useColorModeValue,
+  IconButton, useColorMode
 } from "@chakra-ui/react";
-import { ReactNode } from "react";
 import { FaGithub, FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
 
 export default function Navbar() {
@@ -16,7 +12,7 @@ export default function Navbar() {
 
   return (
     <>
-      <Box px={4}>
+      <Box px={4} pt={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             onClick={() => toggleColorMode()}

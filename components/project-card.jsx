@@ -14,8 +14,9 @@ const ProjectCard = ({ props: { title, description, tags, icon, link }}) => {
     <Link width="full" href={link} unstyled>
       <HStack
         p={4}
-        bg={useColorModeValue("gray.100", "whiteAlpha.100")}
+        
         rounded="lg"
+        bg={useColorModeValue("gray.100", "whiteAlpha.100")}
         borderWidth="1px"
         borderColor={useColorModeValue("neutral.400", "neutralD.400")}
         w="100%"

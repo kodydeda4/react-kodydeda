@@ -2,19 +2,18 @@ import {
   Avatar,
   Box,
   Button, Container,
-  Divider, Heading,
-  HStack,
-  Tag,
+  Divider,
+  Heading,
+  HStack, Tag,
   Text,
-  useBreakpointValue,
-  useColorMode,
-  useColorModeValue,
+  useBreakpointValue, useColorModeValue,
   VStack
 } from "@chakra-ui/react";
-import EducationCard from "../components/education-card";
 import ExperienceCard from "../components/experience-card";
-import Navbar from "../components/navbar";
 import ProjectCard from "../components/project-card";
+import EducationCard from "../components/education-card";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 const resume = {
   name: "Kody Deda",
@@ -138,9 +137,10 @@ const resume = {
 
 export default function Index() {
   return (
-    <Container maxWidth="600" padding={0}>
+    <Container maxWidth="650" padding={0}>
       <Navbar />
-      <ResumeView />    
+      <ResumeView />
+      <Footer/>
     </Container>
   );
 }
@@ -280,3 +280,4 @@ const EducationView = ({ props: { education } }) => {
     </VStack>
   );
 };
+
