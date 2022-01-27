@@ -1,6 +1,9 @@
 import {
   Box,
+  Tag,
+  Flex,
   HStack,
+  Spacer,
   Image as ChakraImage,
   Link,
   Text,
@@ -9,12 +12,11 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-const ProjectCard = ({ props: { title, description, tags, icon, link }}) => {
+const ProjectCard = ({ props: { title, description, tags, icon, link } }) => {
   return (
     <Link width="full" href={link} unstyled>
       <HStack
         p={4}
-        
         rounded="lg"
         bg={useColorModeValue("gray.100", "whiteAlpha.100")}
         borderWidth="1px"
@@ -24,12 +26,17 @@ const ProjectCard = ({ props: { title, description, tags, icon, link }}) => {
         align="start"
         spacing={4}
       >
-        <IconView icon={icon} />
-        <DetailView
-          title={title}
-          description={description}
-          tags={tags}
-        />
+        <>
+          <IconView icon={icon} />
+          <DetailView title={title} description={description} tags={tags} />
+        </>
+        <Spacer />
+
+        <HStack alignContent={"flex-end"}>
+          {tags.map((i) => (
+            <Tag>{i}</Tag>
+          ))}
+        </HStack>
       </HStack>
     </Link>
   );
@@ -70,7 +77,9 @@ const DetailView = ({ title, description, tags }) => {
   return (
     <VStack align="start" justify="flex-start" spacing={1} maxW="lg" h="100%">
       <VStack spacing={0} align="start" flexGrow="1">
-        <Text fontWeight="bold" fontSize="md" noOfLines={2}>{title}</Text>
+        <Text fontWeight="bold" fontSize="md" noOfLines={2}>
+          {title}
+        </Text>
         <Text fontSize="sm">{description}</Text>
         {/* <Text fontSize="xs" color={useColorModeValue("gray.700", "whiteAlpha.700")}>{timeline}</Text> */}
       </VStack>
