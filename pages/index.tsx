@@ -137,11 +137,13 @@ const resume = {
 
 export default function Index() {
   return (
+    <Box bg={useColorModeValue("white", "black")}>
     <Container maxWidth="650" padding={0}>
       <Navbar />
       <ResumeView />
       <Footer/>
     </Container>
+    </Box>
   );
 }
 
