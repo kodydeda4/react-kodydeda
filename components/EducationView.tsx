@@ -4,15 +4,13 @@ import {
   Text,
   Image,
   useColorModeValue,
-  VStack
+  VStack,
 } from "@chakra-ui/react";
 import React from "react";
 
-export default function EducationView({
-  props: { degree, institution, timeline, icon, link },
-}) {
+export default function EducationView({ education }) {
   return (
-    <Link width="full" href={link} unstyled>
+    <Link width="full" href={education.link} unstyled>
       <HStack
         p={4}
         rounded="lg"
@@ -20,11 +18,17 @@ export default function EducationView({
         borderWidth="1px"
         spacing={4}
       >
-        <Image src={icon} height={12} width={12} layout="fixed" rounded="md" />
+        <Image
+          src={education.icon}
+          height={12}
+          width={12}
+          layout="fixed"
+          rounded="md"
+        />
         <DetailView
-          degree={degree}
-          institution={institution}
-          timeline={timeline}
+          degree={education.degree}
+          institution={education.institution}
+          timeline={education.timeline}
         />
       </HStack>
     </Link>

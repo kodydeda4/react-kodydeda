@@ -11,10 +11,11 @@ import {
 import React from "react";
 
 export default function ProjectView({
-  props: { title, description, tags, icon, link },
+  project
+  //props: { title, description, tags, icon, link },
 }) {
   return (
-    <Link width="full" href={link} unstyled>
+    <Link width="full" href={project.link} unstyled>
       <HStack
         p={4}
         rounded="lg"
@@ -22,10 +23,10 @@ export default function ProjectView({
         borderWidth="1px"
         spacing={4}
       >
-        <Image src={icon} height={12} width={12} layout="fixed" rounded="md" />
-        <DetailView title={title} description={description} />
+        <Image src={project.icon} height={12} width={12} layout="fixed" rounded="md" />
+        <DetailView title={project.title} description={project.description} />
         <Spacer />
-        <TagsView tags={tags} />
+        <TagsView tags={project.tags} />
       </HStack>
     </Link>
   );

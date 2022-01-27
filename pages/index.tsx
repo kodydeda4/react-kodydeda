@@ -1,12 +1,14 @@
 import {
   Avatar,
-  Box, Container,
+  Box,
+  Container,
   Divider,
   Heading,
   HStack,
   Tag,
-  Text, useColorModeValue,
-  VStack
+  Text,
+  useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
 import EducationView from "../components/EducationView";
 import ExperienceView from "../components/ExperienceView";
@@ -33,7 +35,7 @@ export default function Index() {
             props={{
               name: resume.name,
               title: resume.title,
-              avatar: resume.avatar,
+              avatar: resume.avatar
             }}
           />
           <AboutView
@@ -43,9 +45,9 @@ export default function Index() {
             }}
           />
           {/* <Button colorScheme={"blue"} size="lg" width="full">Contact Me</Button> */}
-          <ExperienceListView props={{ experience: resume.experience }} />
-          <ProjectListView props={{ projects: resume.projects }} />
-          <EducationListView props={{ education: resume.education }} />
+          <ExperienceListView props={resume.experience} />
+          <ProjectListView props={resume.projects} />
+          <EducationListView props={resume.education} />
         </VStack>
         <Footer />
       </Container>
@@ -53,87 +55,62 @@ export default function Index() {
   );
 }
 
-const HeaderView = ({ props: { name, title, avatar } }) => (
+const HeaderView = ({ props }) => (
   <Box w={"full"} textAlign={"center"}>
     <Avatar
       size={"2xl"}
-      src={avatar}
+      src={props.avatar}
       alt={"Avatar Alt"}
       mb={4}
-      pos={"relative"}
       borderWidth="1px"
       borderColor={useColorModeValue("neutral.100", "neutralD.100")}
     />
-    <Heading fontSize={"3xl"}>{name}</Heading>
+    <Heading fontSize={"3xl"}>{props.name}</Heading>
     <Text fontSize={"lg"} color={"gray.500"} fontWeight={600}>
-      {title}
+      {props.title}
     </Text>
   </Box>
 );
 
-const AboutView = ({ props: { description, skills } }) => (
+const AboutView = ({ props }) => (
   <VStack spacing={3} alignItems="flex-start">
     <Heading size="lg">About</Heading>
     <Divider />
-    <Text>{description}</Text>
+    <Text>{props.description}</Text>
     <HStack>
-      {skills.map((skill) => (
+      {props.skills.map((skill) => (
         <Tag>{skill}</Tag>
       ))}
     </HStack>
   </VStack>
 );
 
-const ExperienceListView = ({ props: { experience } }) => (
+const ExperienceListView = ({ props }) => (
   <VStack width="full" spacing={3} alignItems={"flex-start"}>
     <Heading size="lg">Experience</Heading>
     <Divider />
-    {experience.map((i) => (
-      <ExperienceView
-        props={{
-          title: i.title,
-          description: i.description,
-          timeline: i.timeline,
-          icon: i.icon,
-          link: i.link,
-        }}
-      />
+    {props.map((i) => (
+      <ExperienceView experience={i} />
     ))}
   </VStack>
 );
 
-const ProjectListView = ({ props: { projects } }) => (
+const ProjectListView = ({ props }) => (
   <VStack width="full" spacing={3} alignItems={"flex-start"}>
     <Heading size="lg">Projects</Heading>
     <Divider />
-    {projects.map((i) => (
-      <ProjectView
-        props={{
-          title: i.title,
-          description: i.description,
-          tags: i.tags,
-          icon: i.icon,
-          link: i.link,
-        }}
-      />
+    {props.map((i) => (
+      <ProjectView project={i} />
     ))}
   </VStack>
 );
 
-const EducationListView = ({ props: { education } }) => (
+const EducationListView = ({ props }) => (
   <VStack width="full" spacing={3} alignItems={"flex-start"}>
     <Heading size="lg">Education</Heading>
     <Divider />
-    {education.map((i) => (
-      <EducationView
-        props={{
-          degree: i.degree,
-          institution: i.institution,
-          timeline: i.timeline,
-          icon: i.icon,
-          link: i.link,
-        }}
-      />
+    {props.map((i) => (
+      <EducationView education={i} />
     ))}
   </VStack>
 );
