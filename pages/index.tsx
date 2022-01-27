@@ -21,7 +21,7 @@ const resume = {
   avatar:
     "https://4.img-dpreview.com/files/p/TS560x560~forums/64758839/1e20869f3ca24a60ae084382a9d900da",
   description:
-    "👋 Hey, I'm Kody. I'm a software engineer who specializes in developing software for the Apple ecosystem. I love functional programming and building UI.",
+    "👋 Hi, I'm Kody. I'm a software engineer who specializes in developing software for the Apple ecosystem. I love functional programming and building clean UI. My favorite part about programming is building something cool!",
   skills: [
     "SwiftUI",
     "Combine",
