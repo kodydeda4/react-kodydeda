@@ -19,8 +19,8 @@ import resume from "../data/resume";
 
 export default function Index() {
   return (
-    <Box>
-    {/* <Box bg={useColorModeValue("white", "black")}> */}
+    // <Box>
+    <Box bg={useColorModeValue("white", "black")}>
       <Container maxWidth="container.md">
         <VStack spacing={12} padding={6}>
           <Header />
@@ -106,11 +106,11 @@ const Experience = () => (
 );
 
 const Projects = () => (
-  <VStack width="full" spacing={4} alignItems={"start"}>
+  <VStack width="full" spacing={4} alignItems={"start"} >
     <Heading size="lg">Projects</Heading>
     <Divider />
     {resume.projects.map((project) => (
-      <Link width="full" href={project.link} unstyled>
+      <Link href={project.link} width="full">
         <HStack
           padding={4}
           spacing={4}
