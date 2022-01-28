@@ -1,41 +1,24 @@
 import {
-  ButtonGroup,
-  Divider,
+  Divider, HStack,
   IconButton,
   Text,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
+import {
+  FaGithub, FaLinkedinIn,
+  FaTelegramPlane
+} from "react-icons/fa";
 
 export default function FooterView() {
   return (
-    <VStack width="full" py="4" padding={10}>
+    <VStack spacing={6} pt={12}>
       <Divider />
-      <Buttons />
+      <HStack>
+        <IconButton aria-label="Github" icon={<FaGithub />} />
+        <IconButton aria-label="LinkedIn" icon={<FaLinkedinIn />} />
+        <IconButton aria-label="Email" icon={<FaTelegramPlane />} />
+      </HStack>
       <Text fontSize="sm">&copy; {new Date().getFullYear()} Kody Deda.</Text>
     </VStack>
   );
 }
-
-const Buttons = () => (
-  <ButtonGroup variant="ghost" color="gray.600">
-    <IconButton
-      as="a"
-      href="#"
-      aria-label="GitHub"
-      icon={<FaGithub fontSize="20px" />}
-    />
-    <IconButton
-      as="a"
-      href="#"
-      aria-label="LinkedIn"
-      icon={<FaLinkedin fontSize="20px" />}
-    />
-    <IconButton
-      as="a"
-      href="#"
-      aria-label="Email"
-      icon={<FaTelegramPlane fontSize="20px" />}
-    />
-  </ButtonGroup>
-);

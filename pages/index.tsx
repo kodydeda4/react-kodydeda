@@ -12,32 +12,24 @@ import {
 } from "@chakra-ui/react";
 import EducationView from "../components/EducationView";
 import ExperienceView from "../components/ExperienceView";
-import Footer from "../components/FooterView";
-import Navbar from "../components/NavbarView";
+import FooterView from "../components/FooterView";
+import NavbarView from "../components/NavbarView";
 import ProjectView from "../components/ProjectView";
 import useResume from "../hooks/useResume";
-import Image from "next/image";
-
 
 export default function Index() {
   const resume = useResume();
 
   return (
     <Box bg={useColorModeValue("white", "black")}>
-      <Container maxWidth="750" padding={0}>
-        <Navbar />
-        <VStack
-          width="full"
-          height="full"
-          padding={10}
-          spacing={12}
-          alignItems={"flex-start"}
-        >
+      <Container maxWidth="750" padding={10}>
+        <VStack spacing={12}>
+          <NavbarView />
           <HeaderView
             props={{
               name: resume.name,
               title: resume.title,
-              avatar: resume.avatar
+              avatar: resume.avatar,
             }}
           />
           <AboutView
@@ -51,7 +43,7 @@ export default function Index() {
           <ProjectListView props={resume.projects} />
           <EducationListView props={resume.education} />
         </VStack>
-        <Footer />
+        <FooterView />
       </Container>
     </Box>
   );

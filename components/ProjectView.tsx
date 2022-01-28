@@ -10,10 +10,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-export default function ProjectView({
-  project
-  //props: { title, description, tags, icon, link },
-}) {
+export default function ProjectView({ project }) {
   return (
     <Link width="full" href={project.link} unstyled>
       <HStack
@@ -23,7 +20,14 @@ export default function ProjectView({
         borderWidth="1px"
         spacing={4}
       >
-        <Image src={project.icon} height={12} width={12} layout="fixed" rounded="xl" shadow={"md"} />
+        <Image
+          src={project.icon}
+          height={12}
+          width={12}
+          layout="fixed"
+          rounded="xl"
+          shadow={"md"}
+        />
         <DetailView title={project.title} description={project.description} />
         <Spacer />
         <TagsView tags={project.tags} />

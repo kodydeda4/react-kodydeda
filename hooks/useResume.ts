@@ -11,9 +11,10 @@ const resume = {
     // "MVVM-CleanArchitecture",
     "Firebase",
     "Stripe",
-    "React",
     "Typescript",
-    "Functional Programming",
+    "React",
+    
+    // "Functional Programming",
   ],
   experience: [
     {
