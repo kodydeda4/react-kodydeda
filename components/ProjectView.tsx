@@ -23,7 +23,7 @@ export default function ProjectView({
         borderWidth="1px"
         spacing={4}
       >
-        <Image src={project.icon} height={12} width={12} layout="fixed" rounded="md" />
+        <Image src={project.icon} height={12} width={12} layout="fixed" rounded="xl" shadow={"md"} />
         <DetailView title={project.title} description={project.description} />
         <Spacer />
         <TagsView tags={project.tags} />

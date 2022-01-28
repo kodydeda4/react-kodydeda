@@ -19,7 +19,7 @@ export default function ExperienceView({ experience }) {
         borderWidth="1px"
         spacing={4}
       >
-        <Image src={experience.icon} height={12} width={12} layout="fixed" rounded="md" />
+        <Image src={experience.icon} height={12} width={12} layout="fixed" rounded="xl" shadow={"md"} />
         <DetailView
           title={experience.title}
           description={experience.description}

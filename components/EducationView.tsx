@@ -18,13 +18,7 @@ export default function EducationView({ education }) {
         borderWidth="1px"
         spacing={4}
       >
-        <Image
-          src={education.icon}
-          height={12}
-          width={12}
-          layout="fixed"
-          rounded="md"
-        />
+        <Image src={education.icon} height={12} width={12} layout="fixed" rounded="xl" shadow={"md"} />
         <DetailView
           degree={education.degree}
           institution={education.institution}

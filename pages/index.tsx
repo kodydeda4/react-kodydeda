@@ -64,7 +64,8 @@ const HeaderView = ({ props }) => (
       src={props.avatar}
       alt={"Avatar Alt"}
       mb={4}
-      borderWidth="1px"
+      borderWidth="2px"
+      bg={useColorModeValue("gray.100", "whiteAlpha.200")}
       borderColor={useColorModeValue("neutral.100", "neutralD.100")}
     />
     <Heading fontSize={"3xl"}>{props.name}</Heading>
