@@ -42,7 +42,7 @@ const DetailView = ({ title, description }) => (
 const TagsView = ({ tags }) => (
   <HStack>
     {tags.map((i) => (
-      <Tag>{i}</Tag>
+      <Tag bg={useColorModeValue("gray.300", "whiteAlpha.300")}>{i}</Tag>
     ))}
   </HStack>
 );
