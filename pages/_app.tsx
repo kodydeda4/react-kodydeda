@@ -1,11 +1,11 @@
 import { ChakraProvider } from '@chakra-ui/react'
-import useCustomTheme from '../hooks/useCustomTheme'
+import useAppTheme from '../hooks/useAppTheme'
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
-    <ChakraProvider theme={useCustomTheme()}>
+    <ChakraProvider theme={useAppTheme()}>
       <Component {...pageProps} />
     </ChakraProvider>
   )
 }
-export default MyApp
+export default App

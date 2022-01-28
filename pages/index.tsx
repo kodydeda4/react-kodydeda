@@ -5,107 +5,175 @@ import {
   Divider,
   Heading,
   HStack,
+  Link,
+  Spacer,
   Tag,
   Text,
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
-import EducationView from "../components/EducationView";
-import ExperienceView from "../components/ExperienceView";
-import FooterView from "../components/FooterView";
-import NavbarView from "../components/NavbarView";
-import ProjectView from "../components/ProjectView";
-import useResume from "../hooks/useResume";
+import AppIcon from "../components/AppIcon";
+import ContactLinks from "../components/ContactLinks";
+import ToggleDarkModeButton from "../components/ToggleDarkModeButton";
+import resume from "../data/resume";
 
 export default function Index() {
-  const resume = useResume();
-
   return (
     <Box bg={useColorModeValue("white", "black")}>
-      <Container maxWidth="750" padding={10}>
-        <VStack spacing={12}>
-          <NavbarView />
-          <HeaderView
-            props={{
-              name: resume.name,
-              title: resume.title,
-              avatar: resume.avatar,
-            }}
-          />
-          <AboutView
-            props={{
-              description: resume.description,
-              skills: resume.skills,
-            }}
-          />
-          {/* <Button colorScheme={"blue"} size="lg" width="full">Contact Me</Button> */}
-          <ExperienceListView props={resume.experience} />
-          <ProjectListView props={resume.projects} />
-          <EducationListView props={resume.education} />
+      <Container maxWidth="container.md">
+        <VStack spacing={12} padding={6}>
+          <HeaderView />
+          <ProfileView />
+          <AboutView />
+          <ExperienceListView />
+          <ProjectListView />
+          <EducationListView />
+          <FooterView />
         </VStack>
-        <FooterView />
       </Container>
     </Box>
   );
 }
 
-const HeaderView = ({ props }) => (
-  <Box w={"full"} textAlign={"center"}>
-    <Avatar
-      size={"2xl"}
-      src={props.avatar}
-      alt={"Avatar Alt"}
-      mb={4}
-      borderWidth="2px"
-      bg={useColorModeValue("gray.100", "whiteAlpha.200")}
-      borderColor={useColorModeValue("neutral.100", "neutralD.100")}
-    />
-    <Heading fontSize={"3xl"}>{props.name}</Heading>
-    <Text fontSize={"lg"} color={"gray.500"} fontWeight={600}>
-      {props.title}
-    </Text>
-  </Box>
+const HeaderView = () => (
+  <HStack w="full">
+    <ToggleDarkModeButton />
+    <Spacer />
+    <ContactLinks />
+  </HStack>
 );
 
-const AboutView = ({ props }) => (
-  <VStack spacing={3} alignItems="flex-start">
+const ProfileView = () => (
+  <VStack>
+    <Avatar
+      src={resume.avatar}
+      size={"2xl"}
+      borderWidth="1px"
+      borderColor={useColorModeValue("neutral.100", "neutralD.100")}
+      background={useColorModeValue("gray.100", "whiteAlpha.200")}
+    />
+    <Heading fontSize={"3xl"}>{resume.name}</Heading>
+    <Text fontSize={"lg"} color={"gray.500"} fontWeight={600}>
+      {resume.title}
+    </Text>
+  </VStack>
+);
+
+const AboutView = () => (
+  <VStack width="full" spacing={4} alignItems={"start"}>
     <Heading size="lg">About</Heading>
     <Divider />
-    <Text>{props.description}</Text>
+    <Text>{resume.description}</Text>
     <HStack>
-      {props.skills.map((skill) => (
+      {resume.skills.map((skill) => (
         <Tag>{skill}</Tag>
       ))}
     </HStack>
   </VStack>
 );
 
-const ExperienceListView = ({ props }) => (
-  <VStack width="full" spacing={3} alignItems={"flex-start"}>
+const ExperienceListView = () => (
+  <VStack width="full" spacing={4} alignItems={"start"}>
     <Heading size="lg">Experience</Heading>
     <Divider />
-    {props.map((i) => (
-      <ExperienceView experience={i} />
+    {resume.experience.map((job) => (
+      <Link href={job.link} width="full">
+        <HStack
+          padding={4}
+          spacing={4}
+          rounded="lg"
+          borderWidth="1px"
+          background={useColorModeValue("gray.100", "whiteAlpha.100")}
+        >
+          <AppIcon src={job.icon} />
+          <VStack align="start" spacing={0}>
+            <Text fontWeight="bold" fontSize="md">
+              {job.title}
+            </Text>
+            <Text fontSize="sm">{job.description}</Text>
+            <Text
+              fontSize="xs"
+              color={useColorModeValue("gray.700", "whiteAlpha.700")}
+            >
+              {job.timeline}
+            </Text>
+          </VStack>
+        </HStack>
+      </Link>
     ))}
   </VStack>
 );
 
-const ProjectListView = ({ props }) => (
-  <VStack width="full" spacing={3} alignItems={"flex-start"}>
+const ProjectListView = () => (
+  <VStack width="full" spacing={4} alignItems={"start"}>
     <Heading size="lg">Projects</Heading>
     <Divider />
-    {props.map((i) => (
-      <ProjectView project={i} />
+    {resume.projects.map((project) => (
+      <Link width="full" href={project.link} unstyled>
+        <HStack
+          padding={4}
+          spacing={4}
+          rounded="lg"
+          borderWidth="1px"
+          background={useColorModeValue("gray.100", "whiteAlpha.100")}
+        >
+          <AppIcon src={project.icon} />
+          <VStack align="start" spacing={0}>
+            <Text fontWeight="bold" fontSize="md">
+              {project.title}
+            </Text>
+            <Text fontSize="sm">{project.description}</Text>
+          </VStack>
+          <Spacer />
+          <HStack>
+            {project.tags.map((tag) => (
+              <Tag bg={useColorModeValue("gray.300", "whiteAlpha.300")}>
+                {tag}
+              </Tag>
+            ))}
+          </HStack>
+        </HStack>
+      </Link>
     ))}
   </VStack>
 );
 
-const EducationListView = ({ props }) => (
-  <VStack width="full" spacing={3} alignItems={"flex-start"}>
+const EducationListView = () => (
+  <VStack width="full" spacing={4} alignItems={"start"}>
     <Heading size="lg">Education</Heading>
     <Divider />
-    {props.map((i) => (
-      <EducationView education={i} />
+    {resume.education.map((education) => (
+      <Link href={education.link} width="full">
+        <HStack
+          padding={4}
+          spacing={4}
+          rounded="lg"
+          borderWidth="1px"
+          background={useColorModeValue("gray.100", "whiteAlpha.100")}
+        >
+          <AppIcon src={education.icon} />
+          <VStack align="start" spacing={0}>
+            <Text fontWeight="bold" fontSize="md">
+              {education.degree}
+            </Text>
+            <Text fontSize="sm">{education.institution}</Text>
+            <Text
+              fontSize="xs"
+              color={useColorModeValue("gray.700", "whiteAlpha.700")}
+            >
+              {education.timeline}
+            </Text>
+          </VStack>
+        </HStack>
+      </Link>
     ))}
+  </VStack>
+);
+
+const FooterView = () => (
+  <VStack w="full" spacing={6}>
+    <Divider />
+    <ContactLinks />
+    <Text fontSize="sm">&copy; {new Date().getFullYear()} Kody Deda.</Text>
   </VStack>
 );

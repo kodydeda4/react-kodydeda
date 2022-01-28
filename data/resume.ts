@@ -1,3 +1,4 @@
+
 const resume = {
   name: "Kody Deda",
   title: "iOS Developer",
@@ -7,14 +8,10 @@ const resume = {
   skills: [
     "SwiftUI",
     "Combine",
-    // "Composable Architecture",
-    // "MVVM-CleanArchitecture",
     "Firebase",
     "Stripe",
     "Typescript",
     "React",
-    
-    // "Functional Programming",
   ],
   experience: [
     {
@@ -116,5 +113,4 @@ const resume = {
   ],
 };
 
-const useResume = () => resume;
-export default useResume;
+export default resume;
