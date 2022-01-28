@@ -5,6 +5,7 @@ import {
   Divider,
   Heading,
   HStack,
+  IconButton,
   Link,
   Spacer,
   Tag,
@@ -13,9 +14,9 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import AppIcon from "../components/AppIcon";
+import { FaGithub, FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
 import Card from "../components/Card";
-import ContactLinks from "../components/ContactLinks";
+import Icon from "../components/Icon";
 import Section from "../components/Section";
 import ToggleDarkModeButton from "../components/ToggleDarkModeButton";
 import resume from "../data/resume";
@@ -44,13 +45,26 @@ export default function Index() {
               <Education props={education} />
             ))}
           </Section>
-
           <Footer />
         </VStack>
       </Container>
     </Box>
   );
 }
+
+const ContactLinks = () => (
+  <HStack>
+    <Link href={"https://github.com/kodydeda4"}>
+      <IconButton aria-label="Github" icon={<FaGithub />} />
+    </Link>
+    <Link href={"https://www.linkedin.com/in/kodydeda4/"}>
+      <IconButton aria-label="LinkedIn" icon={<FaLinkedinIn />} />
+    </Link>
+    <Link href={"mailto:kodydeda4@gmail.com"}>
+      <IconButton aria-label="Email" icon={<FaTelegramPlane />} />
+    </Link>
+  </HStack>
+);
 
 const Header = () => (
   <HStack w="full">
@@ -90,7 +104,7 @@ const About = () => (
 const Experience = ({ props }) => (
   <Link href={props.link} width="full">
     <Card>
-      <AppIcon src={props.icon} />
+      <Icon src={props.icon} />
       <VStack align="start" spacing={0}>
         <Text fontWeight="bold" fontSize="md">
           {props.title}
@@ -110,7 +124,7 @@ const Experience = ({ props }) => (
 const Project = ({ props }) => (
   <Link href={props.link} width="full">
     <Card>
-      <AppIcon src={props.icon} />
+      <Icon src={props.icon} />
       <VStack align="start" spacing={0}>
         <Text fontWeight="bold" fontSize="md">
           {props.title}
@@ -130,7 +144,7 @@ const Project = ({ props }) => (
 const Education = ({ props }) => (
   <Link href={props.link} width="full">
     <Card>
-      <AppIcon src={props.icon} />
+      <Icon src={props.icon} />
       <VStack align="start" spacing={0}>
         <Text fontWeight="bold" fontSize="md">
           {props.degree}
@@ -154,3 +168,4 @@ const Footer = () => (
     <Text fontSize="sm">&copy; {new Date().getFullYear()} Kody Deda.</Text>
   </VStack>
 );
+
