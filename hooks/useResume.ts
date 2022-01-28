@@ -12,8 +12,8 @@ const resume = {
     // "MVVM-CleanArchitecture",
     "Firebase",
     "Stripe",
-    // "Typescript",
-    // "ReactJS",
+    "React",
+    "Typescript",
     "Functional Programming",
   ],
   experience: [
@@ -29,7 +29,7 @@ const resume = {
     {
       title: "SwiftUI-FireTodos",
       description:
-        "SwiftUI app that connects to Firebase authentication and Cloud Firestore. Features Apple, Email, and Anonymous sign-in.",
+        "Firebase Auth, Apple Sign-In, Cloud Firestore",
       tags: ["SwiftUI"],
       icon: "https://miro.medium.com/max/1200/1*rjvT7pUR0Acuxk_NRx7iXg.png",
       link: "https://github.com/kodydeda4/SwiftUI-Firetodos",
@@ -44,7 +44,7 @@ const resume = {
     {
       title: "Sapphire",
       description:
-        "SwiftUI app that allows you to customize your app-icons and make them look more like iOS.",
+        "Adaptive icons for macOS",
       tags: ["SwiftUI"],
       icon: "https://miro.medium.com/max/1200/1*rjvT7pUR0Acuxk_NRx7iXg.png",
       link: "https://github.com/kodydeda4/SwiftUI-Sapphire",
@@ -52,49 +52,49 @@ const resume = {
     {
       title: "Emerald",
       description:
-        "SwiftUI app that allows you to set keyboard shortcuts for things like focusing, resizing, and rebalancing your windows.",
+        "Set keyboard shortcuts to focus, resize, and rebalance windows on macOS",
       tags: ["SwiftUI"],
       icon: "https://miro.medium.com/max/1200/1*rjvT7pUR0Acuxk_NRx7iXg.png",
       link: "https://github.com/kodydeda4/SwiftUI-Emerald",
     },
     {
       title: "GuitarTuner",
-      description: "Description",
+      description: "Guitar tuner for macOS",
       tags: ["SwiftUI"],
       icon: "https://miro.medium.com/max/1200/1*rjvT7pUR0Acuxk_NRx7iXg.png",
       link: "https://github.com/kodydeda4/SwiftUI-GuitarTuner",
     },
     {
       title: "MusicToy",
-      description: "Description",
+      description: "Learn scales and modes on macOS",
       tags: ["SwiftUI"],
       icon: "https://miro.medium.com/max/1200/1*rjvT7pUR0Acuxk_NRx7iXg.png",
       link: "https://github.com/kodydeda4/SwiftUI-MusicToy",
     },
     {
       title: "Cookable",
-      description: "Description",
+      description: "Recipe app for iOS",
       tags: ["SwiftUI"],
       icon: "https://miro.medium.com/max/1200/1*rjvT7pUR0Acuxk_NRx7iXg.png",
       link: "https://github.com/kodydeda4/SwiftUI-Cookable",
     },
     {
       title: "MyersBriggs",
-      description: "Description",
+      description: "Psychology test for iOS",
       tags: ["SwiftUI"],
       icon: "https://miro.medium.com/max/1200/1*rjvT7pUR0Acuxk_NRx7iXg.png",
       link: "https://github.com/kodydeda4/SwiftUI-MyersBriggs",
     },
     {
       title: "DemonQuest",
-      description: "Description",
+      description: "Unity RPG ",
       tags: ["Unity", "C#"],
       icon: "https://miro.medium.com/max/1200/1*rjvT7pUR0Acuxk_NRx7iXg.png",
       link: "https://github.com/kodydeda4/Unity3D-DemonQuestRPG",
     },
     {
       title: "OpenCV",
-      description: "Description",
+      description: "Python Programming Exercises",
       tags: ["OpenCV", "Python"],
       icon: "https://miro.medium.com/max/1200/1*rjvT7pUR0Acuxk_NRx7iXg.png",
       link: "https://github.com/kodydeda4/Python-OpenCV",
