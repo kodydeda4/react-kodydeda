@@ -1,8 +1,7 @@
 const resume = {
   name: "Kody Deda",
   title: "iOS Developer",
-  avatar:
-    "https://4.img-dpreview.com/files/p/TS560x560~forums/64758839/1e20869f3ca24a60ae084382a9d900da",
+  avatar: "https://avatars.githubusercontent.com/u/45678211?v=4",
   description:
     "👋 Hi, I'm Kody. I'm a software engineer who specializes in developing software for the Apple ecosystem. I love functional programming and building clean UI. My favorite part about programming is building something cool!",
   skills: [
@@ -28,8 +27,7 @@ const resume = {
   projects: [
     {
       title: "SwiftUI-FireTodos",
-      description:
-        "Firebase Auth, Apple Sign-In, Cloud Firestore",
+      description: "Firebase Auth, Apple Sign-In, Cloud Firestore",
       tags: ["SwiftUI"],
       icon: "https://miro.medium.com/max/1200/1*rjvT7pUR0Acuxk_NRx7iXg.png",
       link: "https://github.com/kodydeda4/SwiftUI-Firetodos",
@@ -43,10 +41,9 @@ const resume = {
     },
     {
       title: "Sapphire",
-      description:
-        "Adaptive icons for macOS",
+      description: "Adaptive icons for macOS",
       tags: ["SwiftUI"],
-      icon: "https://miro.medium.com/max/1200/1*rjvT7pUR0Acuxk_NRx7iXg.png",
+      icon: "https://github.com/kodydeda4/react-kodydeda/blob/main/images/sapphire.png?raw=true",
       link: "https://github.com/kodydeda4/SwiftUI-Sapphire",
     },
     {

@@ -16,6 +16,8 @@ import Footer from "../components/FooterView";
 import Navbar from "../components/NavbarView";
 import ProjectView from "../components/ProjectView";
 import useResume from "../hooks/useResume";
+import Image from "next/image";
+
 
 export default function Index() {
   const resume = useResume();
