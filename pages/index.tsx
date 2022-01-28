@@ -10,7 +10,7 @@ import {
   Tag,
   Text,
   useColorModeValue,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
 import AppIcon from "../components/AppIcon";
 import ContactLinks from "../components/ContactLinks";
@@ -19,23 +19,24 @@ import resume from "../data/resume";
 
 export default function Index() {
   return (
-    <Box bg={useColorModeValue("white", "black")}>
+    <Box>
+    {/* <Box bg={useColorModeValue("white", "black")}> */}
       <Container maxWidth="container.md">
         <VStack spacing={12} padding={6}>
-          <HeaderView />
-          <ProfileView />
-          <AboutView />
-          <ExperienceListView />
-          <ProjectListView />
-          <EducationListView />
-          <FooterView />
+          <Header />
+          <Profile />
+          <About />
+          <Experience />
+          <Projects />
+          <Education />
+          <Footer />
         </VStack>
       </Container>
     </Box>
   );
 }
 
-const HeaderView = () => (
+const Header = () => (
   <HStack w="full">
     <ToggleDarkModeButton />
     <Spacer />
@@ -43,7 +44,7 @@ const HeaderView = () => (
   </HStack>
 );
 
-const ProfileView = () => (
+const Profile = () => (
   <VStack>
     <Avatar
       src={resume.avatar}
@@ -59,7 +60,7 @@ const ProfileView = () => (
   </VStack>
 );
 
-const AboutView = () => (
+const About = () => (
   <VStack width="full" spacing={4} alignItems={"start"}>
     <Heading size="lg">About</Heading>
     <Divider />
@@ -72,7 +73,7 @@ const AboutView = () => (
   </VStack>
 );
 
-const ExperienceListView = () => (
+const Experience = () => (
   <VStack width="full" spacing={4} alignItems={"start"}>
     <Heading size="lg">Experience</Heading>
     <Divider />
@@ -104,7 +105,7 @@ const ExperienceListView = () => (
   </VStack>
 );
 
-const ProjectListView = () => (
+const Projects = () => (
   <VStack width="full" spacing={4} alignItems={"start"}>
     <Heading size="lg">Projects</Heading>
     <Divider />
@@ -138,7 +139,7 @@ const ProjectListView = () => (
   </VStack>
 );
 
-const EducationListView = () => (
+const Education = () => (
   <VStack width="full" spacing={4} alignItems={"start"}>
     <Heading size="lg">Education</Heading>
     <Divider />
@@ -170,7 +171,7 @@ const EducationListView = () => (
   </VStack>
 );
 
-const FooterView = () => (
+const Footer = () => (
   <VStack w="full" spacing={6}>
     <Divider />
     <ContactLinks />
