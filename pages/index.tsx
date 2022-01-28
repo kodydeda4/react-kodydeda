@@ -10,10 +10,13 @@ import {
   Tag,
   Text,
   useColorModeValue,
-  VStack
+  VStack,
 } from "@chakra-ui/react";
+import React from "react";
 import AppIcon from "../components/AppIcon";
+import Card from "../components/Card";
 import ContactLinks from "../components/ContactLinks";
+import Section from "../components/Section";
 import ToggleDarkModeButton from "../components/ToggleDarkModeButton";
 import resume from "../data/resume";
 
@@ -26,9 +29,22 @@ export default function Index() {
           <Header />
           <Profile />
           <About />
-          <Experience />
-          <Projects />
-          <Education />
+          <Section title="Experience">
+            {resume.experience.map((experience) => (
+              <Experience props={experience} />
+            ))}
+          </Section>
+          <Section title="Projects">
+            {resume.projects.map((project) => (
+              <Project props={project} />
+            ))}
+          </Section>
+          <Section title="Education">
+            {resume.education.map((education) => (
+              <Education props={education} />
+            ))}
+          </Section>
+
           <Footer />
         </VStack>
       </Container>
@@ -61,114 +77,74 @@ const Profile = () => (
 );
 
 const About = () => (
-  <VStack width="full" spacing={4} alignItems={"start"}>
-    <Heading size="lg">About</Heading>
-    <Divider />
+  <Section title="About">
     <Text>{resume.description}</Text>
     <HStack>
       {resume.skills.map((skill) => (
         <Tag>{skill}</Tag>
       ))}
     </HStack>
-  </VStack>
+  </Section>
 );
 
-const Experience = () => (
-  <VStack width="full" spacing={4} alignItems={"start"}>
-    <Heading size="lg">Experience</Heading>
-    <Divider />
-    {resume.experience.map((job) => (
-      <Link href={job.link} width="full">
-        <HStack
-          padding={4}
-          spacing={4}
-          rounded="lg"
-          borderWidth="1px"
-          background={useColorModeValue("gray.100", "whiteAlpha.100")}
+const Experience = ({ props }) => (
+  <Link href={props.link} width="full">
+    <Card>
+      <AppIcon src={props.icon} />
+      <VStack align="start" spacing={0}>
+        <Text fontWeight="bold" fontSize="md">
+          {props.title}
+        </Text>
+        <Text fontSize="sm">{props.description}</Text>
+        <Text
+          fontSize="xs"
+          color={useColorModeValue("gray.700", "whiteAlpha.700")}
         >
-          <AppIcon src={job.icon} />
-          <VStack align="start" spacing={0}>
-            <Text fontWeight="bold" fontSize="md">
-              {job.title}
-            </Text>
-            <Text fontSize="sm">{job.description}</Text>
-            <Text
-              fontSize="xs"
-              color={useColorModeValue("gray.700", "whiteAlpha.700")}
-            >
-              {job.timeline}
-            </Text>
-          </VStack>
-        </HStack>
-      </Link>
-    ))}
-  </VStack>
+          {props.timeline}
+        </Text>
+      </VStack>
+    </Card>
+  </Link>
 );
 
-const Projects = () => (
-  <VStack width="full" spacing={4} alignItems={"start"} >
-    <Heading size="lg">Projects</Heading>
-    <Divider />
-    {resume.projects.map((project) => (
-      <Link href={project.link} width="full">
-        <HStack
-          padding={4}
-          spacing={4}
-          rounded="lg"
-          borderWidth="1px"
-          background={useColorModeValue("gray.100", "whiteAlpha.100")}
-        >
-          <AppIcon src={project.icon} />
-          <VStack align="start" spacing={0}>
-            <Text fontWeight="bold" fontSize="md">
-              {project.title}
-            </Text>
-            <Text fontSize="sm">{project.description}</Text>
-          </VStack>
-          <Spacer />
-          <HStack>
-            {project.tags.map((tag) => (
-              <Tag bg={useColorModeValue("gray.300", "whiteAlpha.300")}>
-                {tag}
-              </Tag>
-            ))}
-          </HStack>
-        </HStack>
-      </Link>
-    ))}
-  </VStack>
+const Project = ({ props }) => (
+  <Link href={props.link} width="full">
+    <Card>
+      <AppIcon src={props.icon} />
+      <VStack align="start" spacing={0}>
+        <Text fontWeight="bold" fontSize="md">
+          {props.title}
+        </Text>
+        <Text fontSize="sm">{props.description}</Text>
+      </VStack>
+      <Spacer />
+      <HStack>
+        {props.tags.map((tag) => (
+          <Tag bg={useColorModeValue("gray.300", "whiteAlpha.300")}>{tag}</Tag>
+        ))}
+      </HStack>
+    </Card>
+  </Link>
 );
 
-const Education = () => (
-  <VStack width="full" spacing={4} alignItems={"start"}>
-    <Heading size="lg">Education</Heading>
-    <Divider />
-    {resume.education.map((education) => (
-      <Link href={education.link} width="full">
-        <HStack
-          padding={4}
-          spacing={4}
-          rounded="lg"
-          borderWidth="1px"
-          background={useColorModeValue("gray.100", "whiteAlpha.100")}
+const Education = ({ props }) => (
+  <Link href={props.link} width="full">
+    <Card>
+      <AppIcon src={props.icon} />
+      <VStack align="start" spacing={0}>
+        <Text fontWeight="bold" fontSize="md">
+          {props.degree}
+        </Text>
+        <Text fontSize="sm">{props.institution}</Text>
+        <Text
+          fontSize="xs"
+          color={useColorModeValue("gray.700", "whiteAlpha.700")}
         >
-          <AppIcon src={education.icon} />
-          <VStack align="start" spacing={0}>
-            <Text fontWeight="bold" fontSize="md">
-              {education.degree}
-            </Text>
-            <Text fontSize="sm">{education.institution}</Text>
-            <Text
-              fontSize="xs"
-              color={useColorModeValue("gray.700", "whiteAlpha.700")}
-            >
-              {education.timeline}
-            </Text>
-          </VStack>
-        </HStack>
-      </Link>
-    ))}
-  </VStack>
+          {props.timeline}
+        </Text>
+      </VStack>
+    </Card>
+  </Link>
 );
 
 const Footer = () => (
