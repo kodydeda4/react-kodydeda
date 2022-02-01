@@ -12,6 +12,8 @@ import {
   Text,
   useColorModeValue,
   VStack,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
 import React from "react";
 import { FaGithub, FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
@@ -93,11 +95,13 @@ const Profile = () => (
 const About = () => (
   <Section title="About">
     <Text>{resume.description}</Text>
-    <HStack>
+    <Wrap>
       {resume.skills.map((skill) => (
-        <Tag key={skill}>{skill}</Tag>
+        <WrapItem key={skill}>
+          <Tag>{skill}</Tag>
+        </WrapItem>
       ))}
-    </HStack>
+    </Wrap>
   </Section>
 );
 
@@ -134,13 +138,15 @@ const Project = ({ props }) => {
           <Text fontSize="sm">{props.description}</Text>
         </VStack>
         <Spacer />
-        <HStack>
+        <Wrap justify={"flex-end"}>
           {props.tags.map((tag) => (
-            <Tag key={tag} bg={c}>
-              {tag}
-            </Tag>
+            <WrapItem key={tag}>
+              <Tag key={tag} bg={c}>
+                {tag}
+              </Tag>
+            </WrapItem>
           ))}
-        </HStack>
+        </Wrap>
       </Card>
     </Link>
   );
