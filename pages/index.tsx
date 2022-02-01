@@ -32,17 +32,17 @@ export default function Index() {
           <About />
           <Section title="Experience">
             {resume.experience.map((experience) => (
-              <Experience props={experience} />
+              <Experience key={experience.title} props={experience} />
             ))}
           </Section>
           <Section title="Projects">
             {resume.projects.map((project) => (
-              <Project props={project} />
+              <Project key={project.title} props={project} />
             ))}
           </Section>
           <Section title="Education">
             {resume.education.map((education) => (
-              <Education props={education} />
+              <Education key={education.link} props={education} />
             ))}
           </Section>
           <Footer />
@@ -95,7 +95,7 @@ const About = () => (
     <Text>{resume.description}</Text>
     <HStack>
       {resume.skills.map((skill) => (
-        <Tag>{skill}</Tag>
+        <Tag key={skill}>{skill}</Tag>
       ))}
     </HStack>
   </Section>
@@ -121,26 +121,30 @@ const Experience = ({ props }) => (
   </Link>
 );
 
-const Project = ({ props }) => (
-  <Link href={props.link} width="full">
-    <Card>
-      <Icon src={props.icon} />
-      <VStack align="start" spacing={0}>
-        <Text fontWeight="bold" fontSize="md">
-          {props.title}
-        </Text>
-        <Text fontSize="sm">{props.description}</Text>
-      </VStack>
-      <Spacer />
-      <HStack>
-        {props.tags.map((tag) => (
-          <Tag bg={useColorModeValue("gray.300", "whiteAlpha.300")}>{tag}</Tag>
-        ))}
-      </HStack>
-    </Card>
-  </Link>
-);
-
+const Project = ({ props }) => {
+  const c = useColorModeValue("gray.300", "whiteAlpha.300")
+  return (
+    <Link href={props.link} width="full">
+      <Card>
+        <Icon src={props.icon} />
+        <VStack align="start" spacing={0}>
+          <Text fontWeight="bold" fontSize="md">
+            {props.title}
+          </Text>
+          <Text fontSize="sm">{props.description}</Text>
+        </VStack>
+        <Spacer />
+        <HStack>
+          {props.tags.map((tag) => (
+            <Tag key={tag} bg={c}>
+              {tag}
+            </Tag>
+          ))}
+        </HStack>
+      </Card>
+    </Link>
+  );
+};
 const Education = ({ props }) => (
   <Link href={props.link} width="full">
     <Card>
