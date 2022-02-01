@@ -2,13 +2,13 @@
 
 Source code for my [Personal Website](https://kodydeda.netlify.app), built with [NextJS](https://nextjs.org/docs) & [ChakraUI](https://chakra-ui.com/docs/).
 
-## Make It Yours!
+## 🎁 Make It Yours!
 
-Follow these 3 easy steps...
+Getting started is easy. Follow these 3 steps...
 
-### 1. Run it locally
+### 1. Get it running locally
 
-Paste this into your terminal to clone the repo, install dependencies, and get it runnning on http://localhost:3000.
+Copy & paste this into your terminal to clone the repo, install dependencies, and get your site runnning locally on http://localhost:3000.
 
 ```bash
 # clone repo
@@ -24,8 +24,11 @@ yarn dev
 
 ### 2. Update the resume
 
-Edit the site by modifying `data/resume.ts`. Show off your experience, projects, education, etc.
+Edit the `resume.ts` file to show off your experience, projects, education, etc. The site will automatically re-render to show the changes!
+```
+website/data/resume.ts
+```
 
-### 3. Free Hosting
+### 3. Get it hosted
 
-I personally use [Netlify](https://www.netlify.com) to host my site for free. They're simple, easy to use, and even keep your site updated with git.
+I use [Netlify](https://www.netlify.com) to host my site for free. They're simple, easy to use, and keep the site synced through git. Highly recommend!
