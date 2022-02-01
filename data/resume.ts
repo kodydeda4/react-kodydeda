@@ -1,18 +1,15 @@
-
 const resume = {
   name: "Kody Deda",
   title: "iOS Developer",
   avatar: "https://i.ibb.co/fYrC3mC/user-sticker.png",
   description:
-    "👋 Hi, I'm Kody. I'm a software engineer who specializes in developing software for the Apple ecosystem. I love ui design & functional programming!",
-  skills: [
-    "SwiftUI",
-    "Combine",
-    "Firebase",
-    "Stripe",
-    "Typescript",
-    "React",
-  ],
+    "👋 Hi, I'm Kody. I'm a software engineer who specializes in developing software for the Apple ecosystem. I love SwiftUI & Functional Programming!",
+  skills: ["SwiftUI", "Combine", "Firebase", "Stripe", "Typescript", "React"],
+  urls: {
+    github: "https://github.com/kodydeda4",
+    linkedin: "https://www.linkedin.com/in/kodydeda4/",
+    email: "kodydeda4@gmail.com",
+  },
   experience: [
     {
       title: "iOS Developer",

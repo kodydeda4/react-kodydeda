@@ -25,7 +25,6 @@ import resume from "../data/resume";
 
 export default function Index() {
   return (
-    // <Box>
     <Box>
       <Container maxWidth="container.md">
         <VStack spacing={12} padding={6}>
@@ -56,13 +55,13 @@ export default function Index() {
 
 const ContactLinks = () => (
   <HStack>
-    <Link href={"https://github.com/kodydeda4"}>
+    <Link href={resume.urls.github}>
       <IconButton aria-label="Github" icon={<FaGithub />} />
     </Link>
-    <Link href={"https://www.linkedin.com/in/kodydeda4/"}>
+    <Link href={resume.urls.linkedin}>
       <IconButton aria-label="LinkedIn" icon={<FaLinkedinIn />} />
     </Link>
-    <Link href={"mailto:kodydeda4@gmail.com"}>
+    <Link href={`mailto:${resume.urls.email}`}>
       <IconButton aria-label="Email" icon={<FaTelegramPlane />} />
     </Link>
   </HStack>
@@ -126,7 +125,7 @@ const Experience = ({ props }) => (
 );
 
 const Project = ({ props }) => {
-  const background = useColorModeValue("gray.300", "whiteAlpha.300")
+  const background = useColorModeValue("gray.300", "whiteAlpha.300");
   return (
     <Link href={props.link} width="full">
       <Card>
@@ -175,7 +174,8 @@ const Footer = () => (
   <VStack w="full" spacing={6}>
     <Divider />
     <ContactLinks />
-    <Text fontSize="sm">&copy; {new Date().getFullYear()} Kody Deda.</Text>
+    <Link href={"https://github.com/kodydeda4/react-kodydeda"}>
+      <Text fontSize="sm">&copy; {new Date().getFullYear()} Kody Deda.</Text>
+    </Link>
   </VStack>
 );
-
