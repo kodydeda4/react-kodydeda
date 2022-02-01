@@ -1,4 +1,5 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, Link } from '@chakra-ui/react'
+import { Head } from 'next/document'
 import useAppTheme from '../hooks/useAppTheme'
 
 function App({ Component, pageProps }) {
