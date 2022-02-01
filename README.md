@@ -2,9 +2,11 @@
 
 Source code for my [Personal Website](https://kodydeda.netlify.app), built with [NextJS](https://nextjs.org/docs) & [ChakraUI](https://chakra-ui.com/docs/).
 
+<img width="600" alt="Screen Shot 2022-02-01 at 11 41 48 AM" src="https://user-images.githubusercontent.com/45678211/152011482-9e979c50-f1ed-4543-a19c-9901d34ac7e8.png">
+
 ## 🎁 Make It Yours!
 
-Getting started is easy. Follow these 3 steps...
+Getting started is easy. Just follow these steps...
 
 ### 1. Get it running locally
 
