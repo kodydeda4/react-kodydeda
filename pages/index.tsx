@@ -26,7 +26,7 @@ import resume from "../data/resume";
 export default function Index() {
   return (
     // <Box>
-    <Box bg={useColorModeValue("white", "black")}>
+    <Box>
       <Container maxWidth="container.md">
         <VStack spacing={12} padding={6}>
           <Header />
@@ -126,7 +126,7 @@ const Experience = ({ props }) => (
 );
 
 const Project = ({ props }) => {
-  const c = useColorModeValue("gray.300", "whiteAlpha.300")
+  const background = useColorModeValue("gray.300", "whiteAlpha.300")
   return (
     <Link href={props.link} width="full">
       <Card>
@@ -141,7 +141,7 @@ const Project = ({ props }) => {
         <Wrap justify={"flex-end"}>
           {props.tags.map((tag) => (
             <WrapItem key={tag}>
-              <Tag key={tag} bg={c}>
+              <Tag key={tag} bg={background}>
                 {tag}
               </Tag>
             </WrapItem>
