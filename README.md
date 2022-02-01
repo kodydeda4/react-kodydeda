@@ -1,26 +1,31 @@
-# kodydeda.netlify.app
+# react-kodydeda
 
-Source code of my [personal site](https://kodydeda.netlify.app).
+Source code for my [Personal Website](https://kodydeda.netlify.app), built with [NextJS](https://nextjs.org/docs) & [ChakraUI](https://chakra-ui.com/docs/).
 
-## Run Locally
+## Make It Yours!
 
-To get this website running locally, type this into your terminal:
+Follow these 3 easy steps...
+
+### 1. Run it locally
+
+Paste this into your terminal to clone the repo, install dependencies, and get it runnning on http://localhost:3000.
 
 ```bash
+# clone repo
 git clone https://github.com/kodydeda4/react-kodydeda website
+
+# install dependencies
 cd website
 yarn
+
+# run locally
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Update the resume
 
+Edit the site by modifying `data/resume.ts`. Show off your experience, projects, education, etc.
 
-## Learn More
+### 3. Free Hosting
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+I personally use [Netlify](https://www.netlify.com) to host my site for free. They're simple, easy to use, and even keep your site updated with git.
