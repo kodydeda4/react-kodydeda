@@ -1,5 +1,7 @@
 # Todos
 
+download resume
+
 Typescript enable-strict-mode
 
 degree-checklist >>> univeristy homepage
