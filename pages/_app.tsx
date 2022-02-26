@@ -1,12 +1,12 @@
-import { ChakraProvider } from "@chakra-ui/react";
 import "@fontsource/inter/variable.css";
-import { AppProps } from "next/app";
-import theme from "../theme/theme";
+import ChakraProviderSSR from "../theme/ChakraProviderSSR";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }) {
   return (
-    <ChakraProvider resetCSS theme={theme}>
+    <ChakraProviderSSR cookies={pageProps.cookies}>
       <Component {...pageProps} />
-    </ChakraProvider>
+    </ChakraProviderSSR>
   );
 }
+
+export { getServerSideProps } from "../theme/ChakraProviderSSR";
