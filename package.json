@@ -9,9 +9,11 @@
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.1.1",
+    "@chakra-ui/pro-theme": "^0.0.37",
     "@chakra-ui/react": "^1.8.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@fontsource/inter": "^4.5.4",
     "framer-motion": "^5",
     "next": "^12.0.8",
     "react": "17.0.2",
