@@ -13,7 +13,7 @@ import {
   useColorModeValue,
   VStack,
   Wrap,
-  WrapItem,
+  WrapItem
 } from "@chakra-ui/react";
 import React from "react";
 import { FaGithub, FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
@@ -79,6 +79,7 @@ const Profile = () => (
   <VStack>
     <Avatar
       src={resume.avatar}
+      ignoreFallback={true}
       size={"2xl"}
       borderWidth="1px"
       borderColor={useColorModeValue("neutral.100", "neutralD.100")}

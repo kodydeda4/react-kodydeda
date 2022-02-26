@@ -7,7 +7,6 @@ const theme = extendTheme(
       initialColorMode: "dark",
       useSystemColorMode: true,
     },
-
     colors: { ...pro.colors, brand: pro.colors.blue },
   }
   // pro
