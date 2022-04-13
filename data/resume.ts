@@ -21,6 +21,13 @@ const resume = {
   ],
   projects: [
     {
+        title: "SwiftUI-GymVisual",
+        description: "Firebase Auth, Apple Sign-In, Cloud Firestore",
+        tags: ["SwiftUI"],
+        icon: "https://www.flickr.com/photos/194897103@N03/52002972840/in/dateposted-public/",
+        link: "https://github.com/kodydeda4/SwiftUI-Fitware",
+      },
+    {
       title: "SwiftUI-FireTodos",
       description: "Firebase Auth, Apple Sign-In, Cloud Firestore",
       tags: ["SwiftUI"],
