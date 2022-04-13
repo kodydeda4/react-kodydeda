@@ -24,7 +24,7 @@ const resume = {
         title: "SwiftUI-GymVisual",
         description: "Firebase Auth, Apple Sign-In, Cloud Firestore",
         tags: ["SwiftUI"],
-        icon: "https://www.flickr.com/photos/194897103@N03/52002972840/in/dateposted-public/",
+        icon: "https://live.staticflickr.com/65535/52002972840_e4896db77d_b.jpg",
         link: "https://github.com/kodydeda4/SwiftUI-Fitware",
       },
     {
