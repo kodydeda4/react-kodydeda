@@ -4,7 +4,7 @@ const resume = {
   avatar: "https://live.staticflickr.com/65535/51904519089_c6ef9deaff_o.png",  
   description:
     "👋 Hi, I'm Kody. I'm a software engineer who specializes in developing software for the Apple ecosystem. I love SwiftUI & Functional Programming!",
-  skills: ["SwiftUI", "Combine", "Firebase", "Stripe", "Typescript", "React"],
+  skills: ["SwiftUI", "Combine", "ReactJS", "Typescript", "Firebase", "Stripe", "Git", "C#", "Java", "Python"],
   urls: {
     github: "https://github.com/kodydeda4",
     linkedin: "https://www.linkedin.com/in/kodydeda4/",
@@ -12,35 +12,35 @@ const resume = {
   },
   experience: [
     {
+        title: "Software Engineer",
+        description: "Essential Personnel - Wilmington NC",
+        timeline: "February 2022 - Present",
+        icon: "https://live.staticflickr.com/65535/52018678983_2c128d2a98_k.jpg",
+        link: "https://essper.com",
+      },
+    {
       title: "iOS Developer",
       description: "Dealerware - Austin TX",
-      timeline: "July 12, 2021 - Present",
+      timeline: "July 2021 - March 2022",
       icon: "https://live.staticflickr.com/65535/51846245317_53b767d1e0_b.jpg",
       link: "https://www.dealerware.com",
     },
   ],
   projects: [
     {
-        title: "SwiftUI-GymVisual",
-        description: "Firebase Auth, Apple Sign-In, Cloud Firestore",
+        title: "Fitware",
+        description: "Create workouts from over 2600 exercises",
         tags: ["SwiftUI"],
         icon: "https://live.staticflickr.com/65535/52002972840_e4896db77d_b.jpg",
         link: "https://github.com/kodydeda4/SwiftUI-Fitware",
       },
-    {
-      title: "SwiftUI-FireTodos",
-      description: "Firebase Auth, Apple Sign-In, Cloud Firestore",
-      tags: ["SwiftUI"],
-      icon: "https://live.staticflickr.com/65535/51847218606_1da1299e39_w.jpg",
-      link: "https://github.com/kodydeda4/SwiftUI-Firetodos",
-    },
-    {
-      title: "React-FireTodos",
-      description: "React-based counterpart with Stripe integration",
-      tags: ["ReactJS"],
-      icon: "https://live.staticflickr.com/65535/51847294868_b7886157ee_k.jpg",
-      link: "https://github.com/kodydeda4/react-firetodos",
-    },
+      {
+        title: "GuitarTuner",
+        description: "Guitar tuner for iOS, iPadOS, watchOS & macOS",
+        tags: ["SwiftUI"],
+        icon: "https://live.staticflickr.com/65535/51847218621_0bf095ba39_b.jpg",
+        link: "https://github.com/kodydeda4/SwiftUI-GuitarTuner",
+      },
     {
       title: "Sapphire",
       description: "Adaptive icons for macOS",
@@ -57,12 +57,19 @@ const resume = {
       link: "https://github.com/kodydeda4/SwiftUI-Emerald",
     },
     {
-      title: "GuitarTuner",
-      description: "Guitar tuner for macOS",
-      tags: ["SwiftUI"],
-      icon: "https://live.staticflickr.com/65535/51847218621_0bf095ba39_b.jpg",
-      link: "https://github.com/kodydeda4/SwiftUI-GuitarTuner",
-    },
+        title: "SwiftUI-FireTodos",
+        description: "Firebase Auth, Apple Sign-In, Cloud Firestore",
+        tags: ["SwiftUI"],
+        icon: "https://live.staticflickr.com/65535/51847218606_1da1299e39_w.jpg",
+        link: "https://github.com/kodydeda4/SwiftUI-Firetodos",
+      },
+      {
+        title: "React-FireTodos",
+        description: "React-based counterpart with Stripe integration",
+        tags: ["ReactJS"],
+        icon: "https://live.staticflickr.com/65535/51847294868_b7886157ee_k.jpg",
+        link: "https://github.com/kodydeda4/react-firetodos",
+      },
     {
       title: "MusicToy",
       description: "Learn scales and modes on macOS",
