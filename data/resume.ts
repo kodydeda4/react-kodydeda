@@ -21,7 +21,7 @@ const resume = {
     {
       title: "iOS Developer",
       description: "Dealerware - Austin TX",
-      timeline: "July 2021 - March 2022",
+      timeline: "July 2021 - Present",
       icon: "https://live.staticflickr.com/65535/51846245317_53b767d1e0_b.jpg",
       link: "https://www.dealerware.com",
     },
