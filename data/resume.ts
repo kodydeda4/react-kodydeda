@@ -26,7 +26,6 @@ const resume = {
     email: "kodydeda4@gmail.com",
   },
 
-  
   experience: [
     {
       title: "iOS Developer",
@@ -34,13 +33,6 @@ const resume = {
       timeline: "May 2022 - Present",
       icon: "https://live.staticflickr.com/65535/52223971557_d97ca06b89_b.jpg",
       link: "https://www.pocketradar.com",
-    },
-    {
-      title: "Software Engineer",
-      description: "Essential Personnel - Wilmington NC",
-      timeline: "February 2022 - March 2022",
-      icon: "https://live.staticflickr.com/65535/52018678983_2c128d2a98_k.jpg",
-      link: "https://essper.com",
     },
     {
       title: "iOS Developer",
