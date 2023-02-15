@@ -44,6 +44,13 @@ const resume = {
   ],
   projects: [
     {
+      title: "Water",
+      description: "Cleanup various water locations on a map.",
+      tags: ["SwiftUI, AWS"],
+      icon: "https://live.staticflickr.com/65535/52690801822_93a8a0ee04_m.jpg",
+      link: "https://github.com/kodydeda4/water-demo",
+    },
+    {
       title: "Fitware",
       description: "Create workouts from over 2600 exercises",
       tags: ["SwiftUI"],
