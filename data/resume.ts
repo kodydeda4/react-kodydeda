@@ -3,7 +3,7 @@ const resume = {
   title: "iOS Developer",
   avatar: "https://live.staticflickr.com/65535/51904519089_c6ef9deaff_o.png",
   description:
-    "👋 Hi, I'm Kody. I'm a software engineer who specializes in developing software for the Apple ecosystem. I love SwiftUI & Functional Programming!",
+    "👋 Hi, I'm Kody - an iOS Developer with a passion for crafting elegant and efficient mobile apps. Welcome to my portfolio!",
   skills: [
     "SwiftUI",
     "Combine",
