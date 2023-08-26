@@ -44,6 +44,13 @@ const resume = {
   ],
   projects: [
     {
+      title: "Keyboards",
+      description: "Learn about keyboards from history.",
+      tags: ["SwiftUI"],
+      icon: "https://live.staticflickr.com/65535/53142428592_08187039b9_b.jpg",
+      link: "https://github.com/kodydeda4/Keyboards",
+    },
+    {
       title: "Water",
       description: "Cleanup various water locations on a map.",
       tags: ["SwiftUI, AWS"],
