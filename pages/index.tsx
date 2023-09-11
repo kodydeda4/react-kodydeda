@@ -1,6 +1,7 @@
 import {
   Avatar,
   Box,
+  Button,
   Container,
   Divider,
   Heading,
@@ -16,7 +17,7 @@ import {
   WrapItem
 } from "@chakra-ui/react";
 import React from "react";
-import { FaGithub, FaLinkedinIn, FaTelegramPlane } from "react-icons/fa";
+import { FaAddressCard, FaDownload, FaEnvelope, FaEnvelopeOpen, FaGithub, FaLinkedinIn, FaMailchimp, FaTelegramPlane } from "react-icons/fa";
 import Card from "../components/Card";
 import Icon from "../components/Icon";
 import Section from "../components/Section";
@@ -62,16 +63,21 @@ const ContactLinks = () => (
       <IconButton aria-label="LinkedIn" icon={<FaLinkedinIn />} />
     </Link>
     <Link href={`mailto:${resume.urls.email}`}>
-      <IconButton aria-label="Email" icon={<FaTelegramPlane />} />
+      <IconButton aria-label="Email" icon={<FaEnvelope />} />
     </Link>
   </HStack>
 );
 
 const Header = () => (
   <HStack w="full">
-    <ToggleDarkModeButton />
-    <Spacer />
+    {/* <ToggleDarkModeButton /> */}
     <ContactLinks />
+    <Spacer />
+
+    <Link href={'https://drive.google.com/file/d/1pXu5fviNi_Nne1pHr6PoxpYbb8MQEPKw/view?usp=sharing'}>
+      <Button rightIcon={<FaDownload />}>Resume</Button>
+    </Link>
+
   </HStack>
 );
 
