@@ -16,12 +16,10 @@ import {
   Wrap,
   WrapItem
 } from "@chakra-ui/react";
-import React from "react";
-import { FaAddressCard, FaDownload, FaEnvelope, FaEnvelopeOpen, FaGithub, FaLinkedinIn, FaMailchimp, FaTelegramPlane } from "react-icons/fa";
+import { FaDownload, FaEnvelope, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import Card from "../components/Card";
 import Icon from "../components/Icon";
 import Section from "../components/Section";
-import ToggleDarkModeButton from "../components/ToggleDarkModeButton";
 import resume from "../data/resume";
 
 export default function Index() {
