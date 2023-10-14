@@ -44,6 +44,13 @@ const resume = {
   ],
   projects: [
     {
+      title: "Peg Puzzle Pro",
+      description: "Game",
+      tags: ["SwiftUI"],
+      icon: "https://live.staticflickr.com/65535/53257930208_62954232f5_b.jpg",
+      link: "https://apps.apple.com/us/app/peg-puzzle-classic/id6469359729"   
+    },
+    {
       title: "Keyboards",
       description: "Learn about keyboards from history.",
       tags: ["SwiftUI"],
