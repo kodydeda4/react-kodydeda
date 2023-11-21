@@ -72,7 +72,7 @@ const Header = () => (
     <ContactLinks />
     <Spacer />
 
-    <Link href={'https://drive.google.com/file/d/1pXu5fviNi_Nne1pHr6PoxpYbb8MQEPKw/view?usp=sharing'}>
+    <Link href={'https://docs.google.com/document/d/1oEd5OMPdDjc0ka9Ih0XNrN8Wkwj99HtRZF4Ne6l9RAU/edit?usp=share_link'}>
       <Button rightIcon={<FaDownload />}>Resume</Button>
     </Link>
 
